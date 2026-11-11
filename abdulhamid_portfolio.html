@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The personal portfolio of Abdulhamid Umar Kubsa — software engineering student, technology learner, and builder.">
+  <meta name="author" content="Abdulhamid Umar Kubsa">
+  <meta name="theme-color" content="#0b1020">
+  <title>Abdulhamid Umar Kubsa | Personal Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111a2e;
+      --panel2: #15213a;
+      --text: #edf2ff;
+      --muted: #a8b4ce;
+      --accent: #79e0c3;
+      --accent2: #9db7ff;
+      --line: rgba(255,255,255,.12);
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: radial-gradient(circle at 80% 0%, #1b2c4c 0, transparent 32%), var(--bg);
+      color: var(--text); font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(16px); background: rgba(11,16,32,.82); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.1rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 22px; color: var(--muted); font-size: .92rem; }
+    .hero { padding: 104px 0 90px; display: grid; grid-template-columns: 1.4fr .8fr; align-items: center; gap: 55px; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: .76rem; font-weight: 800; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5.3rem); line-height: 1.04; letter-spacing: -.065em; margin: 18px 0; }
+    h1 span { color: var(--accent); }
+    .lead { max-width: 650px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 18px; border-radius: 999px; border: 1px solid var(--line); font-weight: 700; }
+    .btn.primary { background: var(--accent); color: #07151a; border-color: var(--accent); }
+    .profile-card { background: linear-gradient(145deg, rgba(121,224,195,.13), rgba(157,183,255,.08)); border: 1px solid var(--line); border-radius: 28px; padding: 28px; min-height: 290px; display: flex; flex-direction: column; justify-content: space-between; }
+    .monogram { width: 92px; height: 92px; border-radius: 26px; display: grid; place-items: center; color: #07151a; background: linear-gradient(135deg, var(--accent), var(--accent2)); font-size: 2rem; font-weight: 900; letter-spacing: -.08em; }
+    .profile-card p { color: var(--muted); margin-bottom: 0; }
+    section { padding: 70px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 680px; margin-bottom: 30px; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.05em; line-height: 1.15; margin: 8px 0 12px; }
+    .sub { color: var(--muted); margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: rgba(17,26,46,.82); border: 1px solid var(--line); border-radius: 20px; padding: 23px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p { color: var(--muted); margin: 0; }
+    .tag { display: inline-block; margin: 12px 6px 0 0; padding: 4px 10px; border: 1px solid var(--line); border-radius: 99px; color: var(--accent); font-size: .78rem; }
+    .timeline { border-left: 1px solid rgba(121,224,195,.5); margin-left: 8px; padding-left: 24px; }
+    .timeline .item { position: relative; margin: 0 0 24px; }
+    .timeline .item::before { content: ""; position: absolute; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; left: -30px; top: 9px; }
+    .timeline small { color: var(--accent); font-weight: 700; }
+    .contact { display: flex; justify-content: space-between; align-items: center; gap: 25px; background: linear-gradient(120deg, rgba(121,224,195,.12), rgba(157,183,255,.1)); border: 1px solid var(--line); padding: 30px; border-radius: 24px; }
+    footer { padding: 28px 0 42px; color: var(--muted); font-size: .88rem; }
+    .note { color: #f4d28a; font-size: .88rem; margin-top: 16px; }
+    @media (max-width: 760px) {
+      .navlinks { gap: 12px; font-size: .8rem; }
+      .hero { grid-template-columns: 1fr; padding: 72px 0; gap: 28px; }
+      .profile-card { min-height: 220px; }
+      .grid { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 440px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 8px; }
+      .navlinks { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">AUK<span>.</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#focus">Focus</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Personal portfolio · Ethiopia</div>
+        <h1>Abdulhamid<br><span>Umar Kubsa.</span></h1>
+        <p class="lead">Software Engineering student, technology learner, and aspiring builder. I am interested in using software, AI, and practical problem-solving to create useful solutions.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="monogram" aria-label="A U K monogram">AUK</div>
+        <div>
+          <div class="eyebrow">Currently learning</div>
+          <h3>Building skills that solve real problems.</h3>
+          <p>Software engineering · Programming · AI · Leadership</p>
+        </div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">About me</div>
+          <h2>Learning with purpose. Building with intention.</h2>
+          <p class="sub">I am a Software Engineering student at Haramaya University. I enjoy learning how technology works, improving my problem-solving ability, and turning ideas into practical projects.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>My direction</h3><p>Grow into a capable software engineer with a strong foundation in programming, systems, and modern technologies.</p></article>
+          <article class="card"><h3>My approach</h3><p>Learn step by step, practice consistently, build projects, and improve through feedback.</p></article>
+          <article class="card"><h3>My purpose</h3><p>Use knowledge and collaboration to contribute to useful solutions and positive community development.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Areas of focus</div>
+          <h2>What I am developing</h2>
+          <p class="sub">These are learning and development interests, not claims of professional certification or expertise.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Software development</h3><p>Programming fundamentals, C++, problem-solving, databases, and web development.</p><span class="tag">C++</span><span class="tag">Web</span><span class="tag">Databases</span></article>
+          <article class="card"><h3>Artificial intelligence</h3><p>Exploring AI concepts and how intelligent tools can support people, learning, and practical work.</p><span class="tag">AI</span><span class="tag">Technology</span></article>
+          <article class="card"><h3>Leadership & entrepreneurship</h3><p>Learning how teams, research, innovation, and responsible leadership can turn ideas into action.</p><span class="tag">Teamwork</span><span class="tag">Research</span><span class="tag">Innovation</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Projects & initiatives</div>
+          <h2>Ideas I am working to develop</h2>
+          <p class="sub">This section can grow as projects are completed. Only add live links when the work is published.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>BY US Organization</h3>
+            <p>An emerging university-youth initiative focused on building unity, skills, research, and leadership through practical collaboration.</p>
+            <span class="tag">Youth development</span><span class="tag">Leadership</span>
+          </article>
+          <article class="card">
+            <h3>Personal portfolio</h3>
+            <p>This website is the starting point for presenting my learning journey, projects, and professional interests online.</p>
+            <span class="tag">HTML</span><span class="tag">CSS</span>
+          </article>
+          <article class="card">
+            <h3>Future software projects</h3>
+            <p>A space for applications, websites, and experiments as I continue learning and building.</p>
+            <span class="tag">In progress</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">My journey</div>
+          <h2>A foundation for what comes next</h2>
+        </div>
+        <div class="timeline">
+          <div class="item"><small>EDUCATION</small><h3>Software Engineering · Haramaya University</h3><p class="sub">Developing a foundation in computing, programming, and engineering problem-solving.</p></div>
+          <div class="item"><small>NOW</small><h3>Learning and building</h3><p class="sub">Strengthening programming skills, exploring AI and databases, and developing practical projects.</p></div>
+          <div class="item"><small>LONG-TERM DIRECTION</small><h3>Technology with meaningful impact</h3><p class="sub">Work toward building useful products, contributing to teams, and supporting innovation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div><div class="eyebrow">Contact</div><h2>Let's connect and build.</h2><p class="sub">Have an idea, project, or opportunity to discuss? Reach out through a professional channel.</p></div>
+          <div class="actions">
+            <!-- Replace the # links below with your real profile URLs. -->
+            <a class="btn primary" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <p class="note">Before publishing: add your own profile URLs and a public contact email if you want people to reach you. Do not publish private details such as your home address or personal phone number.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© <span id="year"></span> Abdulhamid Umar Kubsa. Built with purpose.</div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
